@@ -1,1 +1,57 @@
 <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <titel>Healthcare Test Kiosk</titel>
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cklab-edgenc01.ck-collab-engtest.com https://cdnjs.cloudflare.com http://maxcdn.bootstrapcdn.com 'unsafe-inline';" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/stylemaster.css">
+        <link rel="stylesheet" href="css/vidplayer.css">
+        <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+        <script type="text/javascript" src="https://cklab-edgenc01.ck-collab-engtest.com/static/webrtc/js/pexrtc.js"></script>
+        <script type="text/javascript" src="js/library.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <!-- Maybe not needed-->
+        <!--script type="text/javascript">
+            window.onload = function(){
+        document.getElementById('register').click();
+        }
+    </script-->
+    </head>
+    <body>
+       <!-- Controls at top of page (Omitted)-->
+       <!--input type="checkbox" id="pullDown"/>
+        <div id="headerMenu">
+            <p class="select"><label for="audioSource">Microphone: </label><select id="audioSource"></select></p>
+            <p class="select"><label for="audioOutput">Speakers: </label><select id="audioOutput"></select></p>
+            <p class="select"><label for="videoSource">Camera: </label><select id="videoSource"></select></p>
+        </div>
+        <label id="pullDownLabel" for="pullDown"><p>Settings</p></label-->
+
+        <!-- GIF that plays for kiosk mode-->
+        <div class="videoStage" align="center">
+            <video width="98%" id="video" playsinline="playsinline" poster="img/hospital.gif" class="mediastream" muted autoplay="autoplay"/>
+            </div>
+            <br>
+        <!-- Create the corner navigation (Omitted)-->
+        <!--div class="cornerNav">
+            <ul class="close">
+                   <li class="icon-star"></li>
+                   <li class="icon-microphone"></li>
+                   <li class="icon-volume-up"></li>
+                   <li class="icon-off" onclick="window.location='index.html';" id="id_disconnect"></li>
+                   <div class="icon-plus-sign-alt" id="btn"></div>
+               </ul>
+           </div-->
+        <!-- Hardcoded registration form for Pexip Client API-->
+        <div class="regForm" style="display: none;">
+            <form>
+            <label class="clabel">Alias </label><input class="cinput" type="text" id="reg_alias" value="traumarm114@ck-collab-engtest.com" size=40 /><br/>
+            <label class="clabel">Username </label><input class="cinput" type="text" id="reg_username" value="admin" size=40 /><br/>
+            <label class="clabel">Password </label><input class="cinput" type="password" id="reg_password" value="R3g1stR" size=40 /><br/>
+            <label class="clabel">Host </label><input class="cinput" type="text" id="reg_host" value="cklab-edgenc01.ck-collab-engtest.com" size=40 /><br/><br/>
+            <input class="green cinput" id="register" type="button" onclick="reg.register()" value="Register" /><label id="regerror" class="red"></label><br/>
+            </form>
+        </div>
+    </body>
+</html>
