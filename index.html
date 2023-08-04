@@ -76,9 +76,14 @@
   let password = 'helloworld';
 
   function logIn() {
-    if (password === 'helloworld') {
-      window.location = "https://google.com";
-    }
+    // if (password === 'helloworld') {
+      // window.location = "https://google.com";
+    fetch('http://google.com', {mode: 'no-cors'}).then(r=>{
+      window.location = "https://google.com;
+      })
+      .catch(e=>{
+      window.location = "https://weather.com;
+        });
   }
 </script>
 </html>
