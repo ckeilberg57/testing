@@ -72,26 +72,20 @@
   </div>
 </body>
 <script>
-  // Note: This is only hard coded for example purposes, it should probably come from user input
-  let password = 'helloworld';
-
-  function logIn() {
-    // fetch('https://ckeilberg57.github.io/testing1', {mode: 'no-cors'}).then(r=>{
-      // window.location = "https://google.com";
-      // })
-      // .catch(e=>{
-      // window.location = "https://pexip.com";
-        // });
   var url = "https://google.com";
     function UrlExists(url) {
         var http = new XMLHttpRequest();
         http.open('HEAD', url, false);
         http.send();
         if (http.status != 404)
-            return "https://weather.com";
+            return true;
         else
-            return "https://pexip.com";
+            return false;
     }
-  }
+  localStorage.setItem("httpLocalStorage", http);
 </script>
+<script>
+  var redirect = localStorage.getItem("httpLocalStorage");
+  console.log('This is true');
+</script>  
 </html>
