@@ -76,14 +76,22 @@
   let password = 'helloworld';
 
   function logIn() {
-    // if (password === 'helloworld') {
+    // fetch('https://ckeilberg57.github.io/testing1', {mode: 'no-cors'}).then(r=>{
       // window.location = "https://google.com";
-    fetch('https://ckeilberg57.github.io/testing1', {mode: 'no-cors'}).then(r=>{
-      window.location = "https://google.com";
-      })
-      .catch(e=>{
-      window.location = "https://pexip.com";
-        });
+      // })
+      // .catch(e=>{
+      // window.location = "https://pexip.com";
+        // });
+  var url = "https://google.com";
+    function UrlExists(url) {
+        var http = new XMLHttpRequest();
+        http.open('HEAD', url, false);
+        http.send();
+        if (http.status != 404)
+            return "https://weather.com";
+        else
+            return "https://pexip.com";
+    }
   }
 </script>
 </html>
