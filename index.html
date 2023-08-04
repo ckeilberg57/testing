@@ -58,7 +58,7 @@
         <a id="btn-launchURL"
           href="https://countdown.ck-collab-engtest.com/webapp/#/?conference=countdown&name=John%20Doe&callType=video&role=guest"
           class="btn btn-primary btn-lg" type="button" title="JOIN A MEETING"
-          onclick="window.open('https://countdown.ck-collab-engtest.com/webapp/#/?conference=countdown&name=John%20Doe&callType=video&role=guest','popup','width=700,height=1080,scrollbars=no,resizable=no'); return false;">
+          onclick="logIn()">
           JOIN A MEETING
         </a>
       </div>
@@ -72,5 +72,14 @@
     </div>
   </div>
 </body>
+<script>
+  // Note: This is only hard coded for example purposes, it should probably come from user input
+  let password = 'helloworld';
 
+  function logIn() {
+    if (password === 'helloworld') {
+      window.location = "window.open('https://google.com','popup','width=700,height=1080,scrollbars=no,resizable=no'); return false;";
+    }
+  }
+</script>
 </html>
