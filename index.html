@@ -56,8 +56,7 @@
     <div class="row">
       <div class="col text-center my-auto">
         <a id="btn-launchURL"
-          class="btn btn-primary btn-lg" type="button" title="JOIN A MEETING"
-          onclick="window.open('https://ckeilberg57.github.io/testing1')">
+          class="btn btn-primary btn-lg" type="button" title="JOIN A MEETING">
           JOIN A MEETING
         </a>
       </div>
@@ -72,15 +71,30 @@
   </div>
 </body>
 <script>
-  var url = window.location.href;
-    function UrlExists(url) {
-        var http = new XMLHttpRequest();
-        http.open('HEAD', url, false);
-        http.send();
-        if (http.status != 404)
-            return true;
-        else
-            return "https://pexip.com";
+    const mainWebsiteURL = 'https://google.com';
+    const backupWebsiteURL = 'https://weather.com';
+
+    function redirectToBackupWebsite() {
+        window.location.href = backupWebsiteURL;
     }
+
+    document.getElementById('btn-launchURL').addEventListener('click', () => {
+        // Try to fetch the main website
+        fetch(mainWebsiteURL, { method: 'head' })
+            .then(response => {
+                if (response.ok) {
+                    // If the main website is accessible, open it in a new tab
+                    window.open(mainWebsiteURL, '_blank');
+                } else {
+                    // If the main website is down, redirect to the backup website
+                    redirectToBackupWebsite();
+                }
+            })
+            .catch(() => {
+                // If an error occurs while fetching (e.g., due to CORS issue), redirect to the backup website
+                redirectToBackupWebsite();
+            });
+    });
 </script>
+
 </html>
