@@ -5,12 +5,17 @@
 </head>
 <style>
 body {
-    height: 100vh;
-    background-image: url("SLED-DR.jpg");
-    height:100%; 
-    background-position: center;
-    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    background: url('SLED-DR.jpg') no-repeat center center fixed;
     background-size: cover;
+}
+
+/* Adjust background positioning for smaller screens */
+@media (max-width: 768px) {
+    body {
+        background-position: top center;
+    }
 }
 
 div#video-container {
