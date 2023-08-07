@@ -1,84 +1,21 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <title>CKLAB DR Site - Zoom</title>
-  <style>
-    body:after {
-      content: "";
-      position: fixed;
-      /* stretch a fixed position to the whole screen */
-      top: 0;
-      height: 100vh;
-      /* fix for mobile browser address bar appearing disappearing */
-      left: 0;
-      right: 0;
-      z-index: -1;
-      /* needed to keep in the background */
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
-    .welcome {
-      text-align: center;
-      font-size: 30px;
-      position: relative;
-      top: 400px;
-      width: 400px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .container {
-      text-align: center;
-      position: relative;
-      top: 500px;
-      width: 400px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  </style>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <title>Website Redirection</title>
 </head>
-
 <body>
-  <h1 class="text-center">
-    Welcome to DR Demo - 1
-  </h1>
-  <div class="welcome">
-    <div class="col text-center my-auto">
-      Connecting our Community
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col text-center my-auto">
-        <a id="btn-launchURL"
-          class="btn btn-primary btn-lg" type="button" title="JOIN A MEETING">
-          JOIN A MEETING
-        </a>
-      </div>
-      <div class="col text-center my-auto">
-        <a id="btn-connect-translator" href="https://ckeilberg57.github.io/datatime" class="btn btn-primary btn-lg"
-          type="button" title="HOST A MEETING"
-          onclick="window.open('https://ckeilberg57.github.io/datatime','popup','top=0,left=1600,width=950,height=800,scrollbars=yes,resizable=no'); return false;">
-          HOST A MEETING
-        </a>
-      </div>
-    </div>
-  </div>
-</body>
+
+<button id="launchButton">Launch Website</button>
+
 <script>
     const mainWebsiteURL = 'https://pexip.com';
-    const backupWebsiteURL = 'https://weather.com';
+    const backupWebsiteURL = 'https://cisco.com';
 
     function redirectToBackupWebsite() {
         window.location.href = backupWebsiteURL;
     }
 
-    document.getElementById('btn-launchURL').addEventListener('click', () => {
+    document.getElementById('launchButton').addEventListener('click', () => {
         // Try to fetch the main website
         fetch(mainWebsiteURL, { method: 'head' })
             .then(response => {
@@ -97,4 +34,5 @@
     });
 </script>
 
+</body>
 </html>
