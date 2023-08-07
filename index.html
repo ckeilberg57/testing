@@ -75,7 +75,7 @@
   var url = 'https://weather.com';
     function UrlExists(url) {
         var http = new XMLHttpRequest();
-        http.open('HEAD', url, false);
+        http.open(url, false);
         http.send();
         if (http.status != 404)
             return true;
