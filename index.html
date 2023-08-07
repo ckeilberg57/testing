@@ -80,13 +80,8 @@
         if (http.status != 404)
             return true;
         else
-            return false;
+            return "https://google.com";
     }
   localStorage.setItem("httpLocalStorage", XMLHttpRequest);
 </script>
-<script>
-  var vOneLS = localStorage.getItem("httpLocalStorage ");
-  var redirect = vOneLS;
-  console.log(redirect);
-</script>  
 </html>
