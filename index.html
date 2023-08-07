@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Website Redirection</title>
+    <title>Website Error Redirection</title>
 </head>
 <body>
 
-<button id="launchButton">Launch Website</button>
+<button id="checkAndRedirectButton">Check and Redirect</button>
 
 <script>
     const mainWebsiteURL = 'https://pexip.com';
@@ -15,19 +15,22 @@
         window.location.href = backupWebsiteURL;
     }
 
-    document.getElementById('launchButton').addEventListener('click', () => {
-        // Try to fetch the main website
+    document.getElementById('checkAndRedirectButton').addEventListener('click', () => {
+        // Try to fetch the main website using HEAD method
         fetch(mainWebsiteURL, { method: 'head' })
             .then(response => {
                 if (response.ok) {
-                    // If the main website is accessible, open it in a new tab
-                    window.open(mainWebsiteURL, '_blank');
-                } else {
-                    // If the main website is down, redirect to the backup website
+                    // If the response is successful (status code 2xx or 3xx), do nothing
+                    console.log("Main website is accessible.");
+                } else if (response.status === 404) {
+                    // If the response status is 404 (Not Found), redirect to the backup website
                     redirectToBackupWebsite();
+                } else {
+                    // Handle other error status codes if needed
+                    console.log("An error occurred:", response.status);
                 }
             })
-            .catch(() => {
+            .catch(error => {
                 // If an error occurs while fetching (e.g., due to CORS issue), redirect to the backup website
                 redirectToBackupWebsite();
             });
