@@ -5,9 +5,16 @@
 </head>
 <style>
 body:after {
-    content: "";
-    position: fixed;
-    background: url(SLED-DR.jpg);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(SLED-DR.jpg) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+    background-size: cover;
 }
 
 div#video-container {
