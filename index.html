@@ -57,7 +57,7 @@
       <div class="col text-center my-auto">
         <a id="btn-launchURL"
           class="btn btn-primary btn-lg" type="button" title="JOIN A MEETING"
-          onclick="UrlExists()">
+          onclick="window.open('https://weather.com')">
           JOIN A MEETING
         </a>
       </div>
@@ -72,7 +72,7 @@
   </div>
 </body>
 <script>
-  var url = 'https://weather.com';
+  var url = window.location.href;
     function UrlExists(url) {
         var http = new XMLHttpRequest();
         http.open('HEAD', url, false);
